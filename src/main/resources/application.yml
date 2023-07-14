@@ -13,3 +13,8 @@ spring:
 mybatis:
   configuration:
     mapUnderscoreToCamelCase: true
+roy:
+  jwt:
+    header: Authorization
+    expire: 604800
+    secret: asdfghjkl

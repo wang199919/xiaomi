@@ -2,10 +2,7 @@ package com.test.pojo;
 
 import lombok.Data;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * @author: roy
@@ -14,11 +11,11 @@ import javax.persistence.Table;
  */
 
 @Data
-@Table(name= "user" )
-public class User {
+@Entity
+public class User  {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY ,generator = "JDBC")
-    private  Integer  userId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY )
+    private  Long  userId;
     private  String username;
     private String password;
 }

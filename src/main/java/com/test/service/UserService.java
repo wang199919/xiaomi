@@ -5,6 +5,7 @@ import com.test.exception.XmlException;
 import com.test.mapper.UserMapper;
 import com.test.pojo.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
 /**
@@ -13,15 +14,6 @@ import org.springframework.stereotype.Service;
  * @description:
  */
 @Service
-public class UserService {
-    @Autowired
-    private UserMapper userMapper;
-
-    public  User login(User user){
-        User one=userMapper.selectOne(user);
-        if(one==null){
-            throw  new XmlException(ExceptionEnum.GET_USER_NOT_FOUND);
-        }
-        return  one;
-    }
+public interface UserService {
+    public User getByUsername(String username);
 }
